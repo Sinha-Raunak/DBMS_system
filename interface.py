@@ -21,11 +21,11 @@ def Authenticate():
         #username = request.args.get('UserName')
         #password = request.args.get('Password')
         cursor = mysqlInstance.connect().cursor()
-        cursor.execute("SELECT * from cars where cid = '20001' ")
-        data = cursor.fetchone()
+        cursor.execute(" select distinct dname from driver NATURAL JOIN cars NATURAL JOIN reserves where cname = 'Skoda'")
+        data = cursor.fetchall()
         if data is None:
             return "Username or Password is wrong"
         else:
             print(data)
-            return "HAHAHA"
+            return str(data)
 
