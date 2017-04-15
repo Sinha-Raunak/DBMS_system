@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-	<h1> Query: List of manufacturer having factory at location 'X' </h1>
+	<h1> Query: List all goods of 'End User' that need to be shipped  </h1>
+	<h2> {End User is one of the manufacturers}
 	<fieldset> 
 	<legend> Input </legend> 
 	<form action="/QueryProcessing4" method="POST">
-		Enrter the name of location <br>
+		Enrter the userId: <br>
 		<input type="text" name="X">
 		<input type="submit" value="Submit"> 
 	</form>
@@ -14,16 +15,25 @@
 	<legend> Output : </legend>
 	<table border = 1>
 		<tr>
-			<th> Name </th>
-			<th> Packaging </th>
+			<th> Category </th>
+			<th> Weight </th>
+			<th> Volume </th>
 		</tr>
 		{%  for tuple in output_tuple  %}
 				<tr> 
 					<td> {{tuple[0]}} </td>
 					<td> {{tuple[1]}} </td>
+					<td> {{tuple[2]}} </td>
 				</tr>
 		{% endfor %}
 	</table>
 	</fieldset>
+	<fieldset>
+	<legend> Restart </legend>
+	<form form action="/">
+		<input type="submit" value="Restart"> 	
+	</form>
+	</fieldset>
+	
 </body>
 </html>
