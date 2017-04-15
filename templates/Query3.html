@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-	<h1> Query: List of manufacturer having factory at location 'X' </h1>
+	<h1> Query: List facilities of a particuar manufacturer  </h1>
 	<fieldset> 
 	<legend> Input </legend> 
-	<form action="/QueryProcessing3" method="POST">
-		Enrter the name of location <br>
+	<form action="/QueryProcessing1" method="POST">
+		Enrter the name of manufacturer <br>
 		<input type="text" name="X">
 		<input type="submit" value="Submit"> 
 	</form>
@@ -14,16 +14,25 @@
 	<legend> Output : </legend>
 	<table border = 1>
 		<tr>
-			<th> Name </th>
-			<th> Packaging </th>
+			<th> Type </th>
+			<th> loaction </th>
+			<th> Distance </th>
 		</tr>
 		{%  for tuple in output_tuple  %}
 				<tr> 
 					<td> {{tuple[0]}} </td>
 					<td> {{tuple[1]}} </td>
+					<td> {{tuple[2]}} </td>
 				</tr>
 		{% endfor %}
 	</table>
 	</fieldset>
+	<fieldset>
+	<legend> Restart </legend>
+	<form form action="/">
+		<input type="submit" value="Restart"> 	
+	</form>
+	</fieldset>
+	
 </body>
 </html>
