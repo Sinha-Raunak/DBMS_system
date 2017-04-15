@@ -81,12 +81,11 @@ def hadler_second_query():
 		print(data)
 		return render_template("Query2.html",output_tuple = data)
 
-@interface.route("/QueryProcessing3",methods=['POST'])
+@interface.route("/QueryProcessing3")
 def hadler_third_query():
-	if request.method == 'POST':
-		output_form = request.form.get('X')
+		#output_form = request.form.get('X')
     		database_search = mysqlInstance.connect().cursor()
-    		database_search.execute(" select idManufacturer,Packaging  from Manufacturer where Tracking = %s",output_form)
+    		database_search.execute(" select * from Transporter")
    		data = database_search.fetchall()
 		print(data)
 		return render_template("Query3.html",output_tuple = data)
