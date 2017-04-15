@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+	<h1> Query: List of manufacturer having factory at location 'X' </h1>
+	<fieldset> 
+	<legend> Input </legend> 
+	<form action="/QueryProcessing1" method="POST">
+		Enrter the name of location <br>
+		<input type="text" name="X">
+		<input type="submit" value="Submit"> 
+	</form>
+	</fieldset>
+	<fieldset> 
+	<legend> Output : </legend>
+	<table border = 1>
+		<tr>
+			<th> Name </th>
+			<th> Packaging </th>
+		</tr>
+		{%  for tuple in output_tuple  %}
+				<tr> 
+					<td> {{tuple[0]}} </td>
+					<td> {{tuple[1]}} </td>
+				</tr>
+		{% endfor %}
+	</table>
+	</fieldset>
+</body>
+</html>

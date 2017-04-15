@@ -4,9 +4,18 @@
 	
 	<h1>DBMS Query System</h1>
 	<fieldset>
-	<form action="/A" method="POST">
-		Input Car Name : <br>
-		<input type="text" name="t"><br>
+	<legend> Query Set 1: </legend>
+	<form action="/AfterFirstSelection" method="POST">
+		<input type="radio" name="SelectQuery" value="0">List companies based on specified 'Storage-Unit' location <br>	
+		<input type="radio" name="SelectQuery" value="1">List facilities of a particuar manufacturer <br>
+		<input type="radio" name="SelectQuery" value="2">List Packaging Details of goods that a particula manufacturer can ship <br>
+		<input type="radio" name="SelectQuery" value="3">List all value added services offered by Transporter 'X' <br>
+		<input type="radio" name="SelectQuery" value="4">List all goods of 'End User' that need to be shipped  <br>
+		<input type="radio" name="SelectQuery" value="5">Output Transporters with count of, different type of transport options  <br>	
+		<input type="radio" name="SelectQuery" value="6">Order Transporter, in ascending order of delivery time <br>
+		<input type="radio" name="SelectQuery" value="7">List all value added services  <br>
+		<input type="radio" name="SelectQuery" value="8">Check which fright models are available <br>
+		<input type="radio" name="SelectQuery" value="9">List all goods of 'End User' that new to be shipped  <br>
 		<input type="submit" value="Send"><br>
 	</form>
 	</fieldset>
