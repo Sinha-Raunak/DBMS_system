@@ -8,6 +8,26 @@
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
  
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <SCRIPT TYPE="text/javascript">
+    <!--
+    function dropdown(mySel)
+    {
+        var myWin, myVal;
+        myVal = mySel.options[mySel.selectedIndex].value;
+        if(myVal)
+        {
+            if(mySel.form.target)myWin = parent[mySel.form.target];
+            else myWin = window;
+            if (! myWin) return true;
+            myWin.location = myVal;
+        }
+        return false;
+    }
+    //-->
+    </SCRIPT>
+
+
  
  
 </head>
@@ -20,7 +40,25 @@
                 <ul class="nav nav-pills pull-right">
                     <li role="presentation" class="active"><a href="#">Home</a>
                     </li>
-                    <li role="presentation"><a href="#">Sign In</a>
+                    <li role="presentation" class="active"><a href="#">Query 1</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="#">Query 2</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="#">Query 3</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="#">Query 4</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="#">Query 5</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="#">Query 6</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="#">Query 7</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="#">Query 8</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="#">Query 9</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="#">Query 10</a>
                     </li>
                     <li role="presentation"><a href="showSignUp">Sign Up</a>
                     </li>
