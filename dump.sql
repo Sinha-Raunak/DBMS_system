@@ -83,7 +83,6 @@ CREATE TABLE `Manufacturer` (
   `Tracking` varchar(45) NOT NULL,
   `Loading` varchar(45) NOT NULL,
   `Delivery_Days` int(11) NOT NULL,
-  `Packaging` varchar(45) NOT NULL,
   PRIMARY KEY (`idManufacturer`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -94,7 +93,7 @@ CREATE TABLE `Manufacturer` (
 
 LOCK TABLES `Manufacturer` WRITE;
 /*!40000 ALTER TABLE `Manufacturer` DISABLE KEYS */;
-INSERT INTO `Manufacturer` VALUES ('Apollo International','Truck','No','Manual',2,'Carton Boxes'),('Reckitt ','Truck','Yes','Overhaul Crane ',6,'Pallet '),('USHA ','Truck ','Yes','Forklift',8,'Boxes');
+INSERT INTO `Manufacturer` VALUES ('Apollo International','Truck','No','Manual',2),('Reckitt ','Truck','Yes','Overhaul Crane ',6),('USHA ','Truck ','Yes','Forklift',8);
 /*!40000 ALTER TABLE `Manufacturer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,8 +108,7 @@ CREATE TABLE `Rating` (
   `Rating` int(11) NOT NULL,
   `Transporter` varchar(45) NOT NULL,
   `Manufacturer` varchar(45) NOT NULL,
-  KEY `idTransporter _idx` (`Transporter`),
-  CONSTRAINT `fk_transporter_rating` FOREIGN KEY (`Transporter`) REFERENCES `Transporter` (`idTransporter`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`Rating`,`Transporter`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -120,6 +118,7 @@ CREATE TABLE `Rating` (
 
 LOCK TABLES `Rating` WRITE;
 /*!40000 ALTER TABLE `Rating` DISABLE KEYS */;
+INSERT INTO `Rating` VALUES (3,'VRL','X'),(4,'VRL','Z'),(5,'VRL','Y');
 /*!40000 ALTER TABLE `Rating` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,4 +213,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-15 16:46:03
+-- Dump completed on 2017-04-15 21:39:46
