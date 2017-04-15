@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-	<h1> Query: List facilities of a particuar manufacturer  </h1>
+	<h1> Query: List performance metrics {Theft, Delay, Damages }of all transporters   </h1>
+	<h2> All metrics are based on a scale of 5 </h2>
 	<fieldset> 
 	<legend> Input </legend> 
-	<form action="/QueryProcessing1" method="POST">
-		Enrter the name of manufacturer <br>
-		<input type="text" name="X">
-		<input type="submit" value="Submit"> 
+	 <form action="/QueryProcessing3">
+		Press Button to Quey Database <br>
+		<input type="submit" value="Query"> 
 	</form>
-	</fieldset>
+	</fieldset> 
 	<fieldset> 
 	<legend> Output : </legend>
 	<table border = 1>
 		<tr>
-			<th> Type </th>
-			<th> loaction </th>
-			<th> Distance </th>
+			<th> Transporter </th>
+			<th> Theft </th>
+			<th> Delay </th>
+			<th> Damages </th>
 		</tr>
 		{%  for tuple in output_tuple  %}
 				<tr> 
 					<td> {{tuple[0]}} </td>
 					<td> {{tuple[1]}} </td>
 					<td> {{tuple[2]}} </td>
+					<td> {{tuple[3]}} </td>
 				</tr>
 		{% endfor %}
 	</table>
