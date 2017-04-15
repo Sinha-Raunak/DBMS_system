@@ -76,7 +76,7 @@ def hadler_second_query():
 	if request.method == 'POST':
 		output_form = request.form.get('X')
     		database_search = mysqlInstance.connect().cursor()
-    		database_search.execute(" select idManufacturer,Packaging  from Manufacturer where Tracking = %s",output_form)
+    		database_search.execute(" select Packaging,Category,Weight,Volume from Cargo where Manufacturer = %s",output_form)
    		data = database_search.fetchall()
 		print(data)
 		return render_template("Query2.html",output_tuple = data)
